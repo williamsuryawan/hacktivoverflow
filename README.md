@@ -31,10 +31,10 @@ Routing | HTTP | Header(s) | Body | Response | Description
 ------|------|-----------|------|----------|------------
 /answers/question/:id|GET|token:String(**Required**)||Error:<br>Internal server error<br>Success:<br>show all answers based on question|find all answers based on questionId
 /answers/one/:id|GET|token:String(**Required**)||Error:<br>Internal server error<br>Success:<br>show one specific answer|find one answer based on answerId
-/answers/ |POST|token:String(**Required**)|content:String(**Required**)<br>questionId:string(**Required**)|Error:<br>Internal server error<br> No token available <br>Success:<br>success create new answer to one specific question|add question to Hacktiv Overflow
+/answers/ |POST|token:String(**Required**)|content:String(**Required**)<br>questionId:string(**Required**)|Error:<br>Internal server error<br> No token available <br>Success:<br>success create new answer to one specific question|add answer to Hacktiv Overflow
 /answers/upvote/:id|PUT|token:String(**Required**) <br> id:String(**Required**)||Error:<br>Internal server error<br> No token available <br>Success:<br>upvote answer success|upvote answer by answerId (one user can't put more than one upvote per answer)
 /answers/downvote/:id|PUT|token:String(**Required**) <br> id:String(**Required**)||Error:<br>Internal server error<br> No token available <br>Success:<br>upvote answer success|downvote answer by answerId (one user can't put more than one downvote per answer)
-/answers/:id|PUT|token:String(**Required**) <br> answerId:String(**Required**)||Error:<br>Internal server error<br> Not valid author Token <br>Success:<br>edit answer success|delete answer from Hacktiv Overflow (authorization: need to be the author)
+/answers/:id|PUT|token:String(**Required**) <br> answerId:String(**Required**)||Error:<br>Internal server error<br> Not valid author Token <br>Success:<br>edit answer success|edit answer from Hacktiv Overflow (authorization: need to be the author)
 /answers/:id|DELETE|token:String(**Required**) <br> answerId:String(**Required**)||Error:<br>Internal server error<br> Not valid author Token <br>Success:<br>delete answer success| delete answer from Hacktiv Overflow (authorization: need to be the author)
 
 

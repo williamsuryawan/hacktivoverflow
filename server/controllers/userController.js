@@ -1,6 +1,8 @@
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwtConvert = require('../helpers/jwtConvert')
+const kue = require('kue')
+const queue = kue.createQueue()
 
 class UserController {
     static register (req,res) {
@@ -15,6 +17,8 @@ class UserController {
             .then(newUser => {
                 console.log("hasil create user===>", newUser)
                 res.status(201).json(newUser)
+                queue.create('welcome-newuser', {
+                    data: newUser.email }).save()
             })
             .catch (err => {
                 console.log("Terjadi error ===>", err.errors.email.message)

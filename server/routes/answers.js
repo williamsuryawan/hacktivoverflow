@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var AnswerController = require('../controllers/AnswerController')
+var AnswerController = require('../controllers/answerController')
 const { authentication } = require('../middlewares/authentication')
 
 router.use(authentication)
